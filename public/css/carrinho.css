@@ -1,0 +1,238 @@
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Motiva Sans", sans-serif;
+  background: radial-gradient(circle at 20% 30%, #0b0f19, #05080c 80%);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+.cart-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 120px 5%;
+  min-height: 100vh;
+}
+
+.cart-items {
+  flex: 2;
+  background: #0f172a;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.08);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-items h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00eaff;
+  margin-bottom: 5px;
+}
+
+.cart-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 234, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  background: #243045;
+  box-shadow: 0 4px 18px rgba(0, 234, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.cart-item-left,
+.cart-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-item-left img,
+.cart-img {
+  width: 100px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 234, 255, 0.25);
+  cursor: pointer;
+}
+
+.cart-item-left img:hover,
+.cart-img:hover {
+  transform: scale(1.05);
+}
+
+.cart-info h3,
+.cart-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.cart-info p {
+  color: #94a3b8;
+  margin: 5px 0 0;
+  font-weight: 500;
+}
+
+.cart-price {
+  font-weight: 700;
+  color: #00eaff;
+  font-size: 1.1rem;
+}
+
+.cart-controls,
+.cart-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qty-btn {
+  background: transparent;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+  background: #00eaff;
+  color: #0a0f1a;
+  border-color: #00eaff;
+  transform: scale(1.2);
+}
+
+.qty,
+.qty-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  min-width: 20px;
+  text-align: center;
+}
+
+.remove-item {
+  font-size: 1.2rem;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.remove-item:hover {
+  background: #ef4444;
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.cart-item.removing {
+  background: rgba(239, 68, 68, 0.08);
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+
+.cart-summary {
+  flex: 1;
+  background: #111827;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.08);
+  padding: 30px;
+  height: fit-content;
+}
+
+.cart-summary h2 {
+  font-size: 1.3rem;
+  color: #00eaff;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 20px;
+  border-top: 1px solid #334155;
+  padding-top: 15px;
+}
+
+.checkout {
+  width: 100%;
+  background: #00eaff;
+  color: #0a0f1a;
+  border: none;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.checkout:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 234, 255, 0.3);
+}
+
+.security-info {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cart-empty {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #94a3b8;
+  padding: 40px 0;
+}
+
+@media (max-width: 960px) {
+  .cart-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-items,
+  .cart-summary {
+    width: 100%;
+  }
+}

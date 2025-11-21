@@ -1,0 +1,143 @@
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Motiva Sans", sans-serif;
+  background: #f7f9fc;
+  color: #111827;
+}
+
+.form-section {
+  margin-top: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.form-section form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-section input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-section input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.btn-salvar {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-salvar:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.table-section {
+  margin-top: 40px;
+}
+
+.table-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #111827;
+}
+
+.empresa-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.empresa-table thead {
+  background: #f1f5f9;
+}
+
+.empresa-table th {
+  text-align: left;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.empresa-table td {
+  padding: 14px 20px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+
+.btn-editar,
+.btn-excluir {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-editar {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-editar:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.btn-excluir {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .form-section form {
+    flex-direction: column;
+  }
+
+  .empresa-table th,
+  .empresa-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

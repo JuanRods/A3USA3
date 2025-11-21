@@ -1,0 +1,251 @@
+/* src/css/login.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* corpo da página */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #111;
+  border-bottom: 1px solid #333;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+header .back-btn {
+  padding: 12px 24px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+header .back-btn:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* main */
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* container do login */
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.login-container img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* formulários (login / cadastro / esqueci) */
+
+.form {
+  display: none;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  flex-direction: column;
+  align-items: center;
+}
+
+.form.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form h2 {
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* campos de input (email, senha, nome, etc.) */
+
+.form input {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* botão principal */
+
+button.login-btn {
+  width: 80%;
+  padding: 12px;
+  margin: 15px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+button.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* links (esqueci / criar conta / voltar) */
+
+.links {
+  width: 80%;
+  text-align: center;
+  margin: 10px auto 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #4da6ff;
+}
+
+/* footer */
+
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #333;
+}
+
+footer .column {
+  margin: 10px 20px;
+}
+
+footer .column p {
+  color: #aaa;
+  max-width: 250px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  color: #f0f0f0;
+}
+
+footer a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin: 3px 0;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  font-size: 1rem;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #fff;
+}
+
+/* responsivo básico */
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .form input,
+  button.login-btn,
+  .links {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

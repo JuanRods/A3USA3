@@ -1,0 +1,321 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Motiva Sans", "Roboto Mono", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1b2838, #0a141e 80%);
+  color: #c7d5e0;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(180deg, #171a21 0%, #0e141b 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 4%;
+  position: fixed;
+  top: 0;
+  left: 70px;
+  width: calc(100% - 70px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #66c0f4;
+  letter-spacing: 2px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 30px;
+  padding-right: 5px;
+}
+.search-container input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  width: 280px;
+}
+.search-btn {
+  background: #66c0f4;
+  border: none;
+  color: #000;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.search-btn:hover { transform: scale(1.1); }
+
+header nav button {
+  background: transparent;
+  color: #c7d5e0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+header nav button:hover {
+  background: #66c0f4;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  background: rgba(11, 19, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  transition: width 0.4s ease;
+  overflow: hidden;
+  z-index: 20;
+}
+.sidebar:hover { width: 220px; background: rgba(11, 19, 30, 0.95); }
+.sidebar-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c7d5e0;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.sidebar nav ul li a:hover {
+  color: #66c0f4;
+  background: linear-gradient(90deg, rgba(102,192,244,0.1), transparent);
+  transform: translateX(5px);
+}
+
+main.game-container {
+  margin-top: 120px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(20, 25, 36, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+#game-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+}
+.thumbnail-row img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+.thumbnail-row img:hover,
+.thumbnail-row img.active {
+  opacity: 1;
+  transform: scale(1.05);
+  border-color: #66c0f4;
+}
+
+.game-details {
+  background: linear-gradient(160deg, rgba(15,20,30,0.9), rgba(10,15,25,0.9));
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+.game-details h1 {
+  color: #66c0f4;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.game-details p {
+  color: #c7d5e0;
+  line-height: 1.5;
+}
+.price {
+  font-size: 1.4rem;
+  color: #a4d007;
+  margin: 20px 0 15px;
+}
+.buy-btn,
+.fav-btn {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.buy-btn {
+  background: linear-gradient(90deg, #a4d007, #76b900);
+  color: #000;
+}
+.buy-btn:hover {
+  background: linear-gradient(90deg, #b5f018, #8ee400);
+  transform: translateY(-2px);
+}
+.fav-btn {
+  margin-top: 10px;
+  background: rgba(102,192,244,0.2);
+  color: #66c0f4;
+}
+.fav-btn:hover {
+  background: #66c0f4;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.rating-section {
+  margin-top: 60px;
+  background: rgba(20, 30, 45, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.rating-section h2 {
+  color: #66c0f4;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.average-rating {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.star-rating i {
+  color: #444;
+  transition: color 0.2s;
+}
+.star-rating i.active,
+.star-rating i:hover,
+.star-rating i:hover ~ i {
+  color: #f8b400;
+}
+
+#review-text {
+  width: 100%;
+  background: #1c2838;
+  color: #fff;
+  border: 1px solid #3b4a5a;
+  border-radius: 6px;
+  padding: 10px;
+  resize: none;
+  margin-top: 10px;
+}
+#submit-review {
+  margin-top: 10px;
+  background: #66c0f4;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#submit-review:hover {
+  background: #88d3ff;
+}
+
+.reviews-list {
+  margin-top: 20px;
+}
+.reviews-list h3 {
+  color: #66c0f4;
+  margin-bottom: 10px;
+}
+.reviews-list ul {
+  list-style: none;
+  padding: 0;
+}
+.reviews-list li {
+  background: rgba(10,15,25,0.6);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  color: #c7d5e0;
+  border-left: 3px solid #66c0f4;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #66c0f4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a141e;
+}
+
+.fixed-review {
+  list-style: none;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  font-style: italic;
+  color: #cfcfcf;
+}
+
+.reviews-list h4 {
+  margin-top: 15px;
+  color: #7fb4ff;
+  font-weight: 500;
+}

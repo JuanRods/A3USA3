@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f6f8fa;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar .subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #444;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar .menu a:hover {
+  background: #e9f0ff;
+  color: #0055ff;
+}
+
+.content {
+  flex: 1;
+  padding: 20px 40px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.header .user {
+  font-size: 14px;
+}
+
+.header .logout {
+  color: #555;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.welcome {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.welcome h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  font-size: 15px;
+  color: #555;
+}
+
+.card .value {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.card .change {
+  font-size: 13px;
+  color: #22c55e;
+}
+
+.blue .value { color: #3b82f6; }
+.purple .value { color: #a855f7; }
+.green .value { color: #22c55e; }
+.orange .value { color: #f97316; }
+.violet .value { color: #6366f1; }
+.darkgreen .value { color: #16a34a; }
+.pink .value { color: #ec4899; }
+.yellow .value { color: #eab308; }
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+form input,
+form select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.menu.logout a {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.menu.logout a:hover {
+  color: #ff4d4d;
+}
+/* ======= CARD DO BLOCO ======= */
+/* ======= CARD DO BLOCO ======= */
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: #111827;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.12);
+  border-color: #d1d5db;
+}
+
+/* ======= TÍTULO ======= */
+.chart-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
+
+/* ======= LISTA ======= */
+.mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mini-list li {
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.mini-list li:last-child {
+  margin-bottom: 0;
+}
+
+.mini-list li:hover {
+  background: #eff6ff;          /* azul bem clarinho */
+  border-color: #bfdbfe;        /* borda azul clara */
+  box-shadow: 0 2px 8px rgba(148, 163, 184, 0.25);
+  transform: translateX(3px);
+}
+
+/* bolinha indicadora à esquerda */
+.mini-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #3b82f6;
+  flex-shrink: 0;
+}
+
+/* Nome do jogo */
+.mini-list li strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Ano e preço */
+.mini-list li span {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
