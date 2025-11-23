@@ -1,22 +1,28 @@
-
 body {
   margin: 0;
-  font-family: "Poppins", "Motiva Sans", sans-serif;
-  background: #f7f9fc;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: #f6f8fa;
   color: #111827;
 }
 
+/* bloco de filtro / formulário (se você usar) */
 .form-section {
-  margin-top: 30px;
+  margin-top: 24px;
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.form-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #111827;
 }
 
 .form-section form {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -26,11 +32,11 @@ body {
 .form-section input {
   flex: 1;
   min-width: 180px;
-  padding: 10px 12px;
+  padding: 9px 11px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 0.95rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-section select:focus,
@@ -38,7 +44,7 @@ body {
 .form-section input:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
 }
 
 .form-section textarea {
@@ -50,25 +56,29 @@ body {
   background: #2563eb;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 9px 18px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
 }
 
 .btn-enviar:hover {
   background: #1e40af;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
+/* tabela de avaliações */
 .table-section {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .table-section h2 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
   color: #111827;
 }
 
@@ -78,7 +88,7 @@ body {
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
 .avaliacoes-table thead {
@@ -87,23 +97,23 @@ body {
 
 .avaliacoes-table th {
   text-align: left;
-  padding: 14px 20px;
-  font-size: 0.95rem;
+  padding: 12px 18px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #1f2937;
 }
 
 .avaliacoes-table td {
-  padding: 14px 20px;
-  border-top: 1px solid #e2e8f0;
-  font-size: 0.95rem;
-  color: #334155;
+  padding: 12px 18px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  color: #374151;
   vertical-align: top;
 }
 
 .avaliacoes-table tr:hover {
-  background: #f8fafc;
-  transition: background 0.3s ease;
+  background: #f9fafb;
+  transition: background 0.2s ease;
 }
 
 @media (max-width: 900px) {
@@ -112,14 +122,14 @@ body {
     align-items: stretch;
   }
 
-  .avaliacoes-table th,
-  .avaliacoes-table td {
-    font-size: 0.85rem;
+  .btn-enviar {
+    width: 100%;
     padding: 10px;
   }
 
-  .btn-enviar {
-    width: 100%;
-    padding: 12px;
+  .avaliacoes-table th,
+  .avaliacoes-table td {
+    font-size: 0.8rem;
+    padding: 9px 10px;
   }
 }

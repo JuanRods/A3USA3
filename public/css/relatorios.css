@@ -1,112 +1,223 @@
+/* ===========================================
+   BASE DA PÁGINA
+=========================================== */
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #f5f6fa;
-  color: #333;
+  color: #111827;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 260px;
-  background: #0f1724;
-  color: white;
-  padding: 24px 18px;
-  box-sizing: border-box;
-  z-index: 10;
-}
-
-.sidebar h2 { margin: 0; font-size: 1.4rem; }
-.subtitle { color: #94a3b8; margin-bottom: 1rem; font-size: 0.86rem; }
-
-.menu a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #cbd5e1;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 8px;
-}
-.menu a.active, .menu a:hover {
-  background: #1f2937;
-  color: #fff;
-}
-
-.content {
-  margin-left: 260px;
+/* wrapper da página de relatórios
+   (dentro do <main class="content"> do layout) */
+.relatorios-page {
   padding: 32px;
-  min-height: 100vh;
   box-sizing: border-box;
 }
 
-header h1 {
-  font-size: 1.8rem;
+/* ===========================================
+   CABEÇALHO
+=========================================== */
+
+.relatorios-header h1 {
+  font-size: 1.9rem;
   margin: 0;
 }
-header p {
+
+.relatorios-header p {
   color: #6b7280;
   margin: 6px 0 22px;
 }
 
-.buttons {
+/* ===========================================
+   CARDS RESUMO
+=========================================== */
+
+.relatorios-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.relatorios-cards .card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.relatorios-cards .card h3 {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+  color: #4b5563;
+}
+
+.relatorios-cards .card .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.relatorios-cards .card span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.relatorios-cards .card.blue .value {
+  color: #2563eb;
+}
+.relatorios-cards .card.purple .value {
+  color: #7c3aed;
+}
+.relatorios-cards .card.green .value {
+  color: #059669;
+}
+.relatorios-cards .card.teal .value {
+  color: #0f766e;
+}
+
+/* ===========================================
+   BOTÕES DE FILTRO
+=========================================== */
+
+.relatorios-buttons {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin: 10px 0 22px;
 }
 
-.btn {
+.relatorios-buttons .btn {
   padding: 10px 16px;
   border-radius: 10px;
   border: none;
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform .12s ease, filter .12s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.12s ease, filter 0.12s ease,
+    box-shadow 0.12s ease, background 0.12s ease;
+  font-size: 0.9rem;
 }
-.btn:hover {
+
+.relatorios-buttons .btn:hover {
   transform: translateY(-3px);
   filter: brightness(1.05);
 }
-.btn.primary { background: #3b82f6; }
-.btn.secondary { background: #6366f1; }
-.btn.success { background: #10b981; }
-.btn.warning { background: #f59e0b; }
 
-.charts {
+.relatorios-buttons .btn.active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+  filter: none;
+}
+
+.relatorios-buttons .btn.primary {
+  background: #3b82f6;
+}
+.relatorios-buttons .btn.secondary {
+  background: #6366f1;
+}
+.relatorios-buttons .btn.success {
+  background: #10b981;
+}
+.relatorios-buttons .btn.warning {
+  background: #f59e0b;
+}
+
+/* ===========================================
+   ÁREA DE GRÁFICOS
+=========================================== */
+
+.relatorios-charts {
   display: flex;
-  gap: 22px;
   flex-wrap: wrap;
+  gap: 22px;
   align-items: flex-start;
+  justify-content: center;
 }
 
+/* card de cada gráfico */
 .chart-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
   padding: 18px;
-  flex: 1;
-  min-width: 300px;
-  max-width: 520px;
+  flex: 1 1 420px;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
-.chart-wrapper {
-  width: 100%;
-  height: 230px;
-  position: relative;
+.chart-card.full {
+  flex: 1 1 100%;
 }
-.chart-wrapper canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
+
 .chart-card h3 {
-  text-align: center;
   font-size: 1.05rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #0f1724;
+}
+
+/* ===========================================
+   WRAPPER DO CANVAS
+   (aqui controlamos proporção e nitidez)
+=========================================== */
+
+/* wrapper genérico dos gráficos (barra/linha) */
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* barra / linha: altura fixa, deixa o Chart.js cuidar da proporção */
+.chart-wrapper--bar,
+.chart-wrapper--line {
+  height: 320px;
+}
+
+/* pizza: parecido com o print, ligeiramente mais “quadrado” */
+.chart-wrapper--pie {
+  height: 280px;
+  max-width: 420px;    /* deixa a pizza mais compacta */
+}
+
+/* radar um pouquinho maior */
+.chart-wrapper--radar {
+  height: 300px;
+  max-width: 420px;
+}
+
+/* NÃO força height no canvas: isso esticava e quebrava o hover */
+.chart-wrapper canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+
+/* ===========================================
+   RESPONSIVO
+=========================================== */
+
+@media (max-width: 900px) {
+  .relatorios-page {
+    padding: 20px;
+  }
+
+  .relatorios-charts {
+    flex-direction: column;
+  }
+
+  .chart-card {
+    flex: 1 1 100%;
+  }
+
+  .chart-wrapper--pie,
+  .chart-wrapper--radar {
+    max-width: 100%;
+  }
 }

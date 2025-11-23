@@ -1,24 +1,36 @@
-
 body {
   margin: 0;
-  font-family: "Poppins", "Motiva Sans", sans-serif;
-  background: #f7f9fc;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: #f6f8fa;
   color: #111827;
 }
 
-
 .form-section {
-  margin-top: 30px;
+  margin-top: 24px;
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.form-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #111827;
 }
 
 .form-section form {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
+}
+
+/* grid que você usa no JSX */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  width: 100%;
 }
 
 .form-section input,
@@ -26,11 +38,11 @@ body {
 .form-section textarea {
   flex: 1;
   min-width: 180px;
-  padding: 10px 12px;
+  padding: 9px 11px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 0.95rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-section input:focus,
@@ -38,100 +50,118 @@ body {
 .form-section textarea:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
 }
 
 .form-section textarea {
   resize: vertical;
-  min-height: 38px;
+  min-height: 40px;
 }
 
 .btn-salvar {
   background: #2563eb;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 9px 18px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+  margin-top: 8px;
 }
 
 .btn-salvar:hover {
   background: #1e40af;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
+/* TABELA DE JOGOS */
 .table-section {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .table-section h2 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
   color: #111827;
 }
 
+/* aceita "jogo-table" e "jogos-table" */
+.jogo-table,
 .jogos-table {
   width: 100%;
   border-collapse: collapse;
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
+.jogo-table thead,
 .jogos-table thead {
   background: #f1f5f9;
 }
 
+.jogo-table th,
 .jogos-table th {
   text-align: left;
-  padding: 14px 20px;
-  font-size: 0.95rem;
+  padding: 12px 18px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #1f2937;
 }
 
+.jogo-table td,
 .jogos-table td {
-  padding: 14px 20px;
-  border-top: 1px solid #e2e8f0;
-  font-size: 0.95rem;
-  color: #334155;
+  padding: 12px 18px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  color: #374151;
   vertical-align: top;
 }
 
 .btn-editar,
 .btn-excluir {
   border: none;
-  width: 50%;
-  padding: 8px 14px;
+  padding: 7px 10px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  margin-right: 6px;
+  margin-right: 4px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
 }
 
 .btn-editar {
   background: #2563eb;
-  color: white;
+  color: #ffffff;
 }
 
 .btn-editar:hover {
-  background: #1e40af;
-  transform: translateY(-2px);
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
 }
 
 .btn-excluir {
   background: #dc2626;
-  color: white;
+  color: #ffffff;
 }
 
 .btn-excluir:hover {
   background: #b91c1c;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.35);
+}
+
+.jogo-table tr:hover,
+.jogos-table tr:hover {
+  background: #f9fafb;
+  transition: background 0.2s ease;
 }
 
 @media (max-width: 900px) {
@@ -139,15 +169,85 @@ body {
     flex-direction: column;
   }
 
+  .jogo-table th,
+  .jogo-table td,
   .jogos-table th,
   .jogos-table td {
-    font-size: 0.85rem;
-    padding: 10px;
+    font-size: 0.8rem;
+    padding: 9px 10px;
   }
 
   .btn-editar,
   .btn-excluir {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botão redondinho de + no canto esquerdo */
+.btn-toggle-form {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-toggle-form i {
+  pointer-events: none;
+}
+
+.btn-toggle-form:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.45);
+}
+
+.btn-toggle-form.aberto {
+  background: #4b5563;
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.4);
+}
+
+.btn-toggle-form.aberto:hover {
+  background: #374151;
+}
+
+/* opcional: uma transição suave ao aparecer o form */
+.form-section {
+  margin-top: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  animation: fadeDown 0.18s ease-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

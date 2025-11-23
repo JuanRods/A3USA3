@@ -127,6 +127,7 @@ main {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+
 .form input:focus {
   border-color: #007bff;
   outline: none;

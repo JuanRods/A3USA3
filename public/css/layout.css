@@ -111,6 +111,63 @@ body {
     color: #80b3ff;
 }
 
+/* ===== BOTÃO DE LOGOUT NA SIDEBAR ===== */
+
+.sidebar-link-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 10px 10px 12px;
+    color: #cfd8dc;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+/* ícone */
+.sidebar-link-logout i {
+    flex-shrink: 0;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+/* texto oculto até a sidebar expandir */
+.sidebar-link-logout span {
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+    overflow: hidden;
+    transform: translateX(-10px);
+    transition:
+        opacity 0.4s ease-in-out,
+        visibility 0.4s ease-in-out,
+        max-width 0.4s ease-in-out,
+        transform 0.4s ease-in-out,
+        margin-left 0.4s ease-in-out;
+}
+
+/* quando a sidebar abre */
+.sidebar:hover .sidebar-link-logout span {
+    opacity: 1;
+    visibility: visible;
+    max-width: 140px;
+    transform: translateX(0);
+    margin-left: 4px;
+}
+
+/* hover igual aos links da sidebar */
+.sidebar-link-logout:hover {
+    background-color: #1f2e47;
+    color: #80b3ff;
+}
+
 nav {
     display: flex;
     justify-content: center;
